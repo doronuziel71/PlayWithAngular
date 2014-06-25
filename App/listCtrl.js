@@ -1,7 +1,7 @@
 (function () {
     var module = angular.module('doron');
 
-    var helloCtrl = function ($scope, md5, peopleService, gravatar) {
+    var listCtrl = function ($scope, md5, peopleService, gravatar) {
 
 
         $scope.gravatar = gravatar || angular.noop;
@@ -24,6 +24,6 @@
     }
 
 
-    module.controller('helloCtrl', helloCtrl);
+    module.controller('listCtrl', listCtrl);
 
 })();

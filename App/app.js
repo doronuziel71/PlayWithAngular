@@ -9,8 +9,8 @@
             path: '/list',
        
             route: {
-                controller: 'helloCtrl',
-                templateUrl: '/hello.html',
+                controller: 'listCtrl',
+                templateUrl: '/list.html',
                  title:'List',
                  icon:'user'
             
