@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
 
-        <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body ng-app="doron">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>This is a test</h1>
-                </div>
-            </div>
-            <div class="row" >
-                <div class="col-md-3" ng-controller="navCtrl">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li ng-repeat="item in nav" ng-class="{active:isCurrent(item.route)}"><a ng-href="#{{item.path}}"><i class="glyphicon glyphicon-{{item.route.icon}}" ></i> {{item.route.title}}</a></li>
-                    </ul>
-                </div> 
-                <div class="col-md-9" ng-view></div>
+    <title>Intro to Angular</title>
+    <link href="public/vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="public/vendor/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body ng-app="doron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>This is a test</h1>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-3" ng-controller="navCtrl">
+                <ul class="nav nav-pills nav-stacked">
+                    <li ng-repeat="item in nav" ng-class="{active:isCurrent(item.route)}"><a ng-href="#{{item.path}}"><i class="glyphicon glyphicon-{{item.route.icon}}"></i> {{item.route.title}}</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9" ng-view></div>
+        </div>
+    </div>
 
-        <script  src="/public/vendor/jquery/jquery.min.js"></script>
-        <script  src="/public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script  src="/public/vendor/angular/angular.min.js"></script>
-           <script  src="/public/vendor/angular-route/angular-route.min.js"></script>
-        <script src="/app/app.js"></script>
-        <script src="/app/listCtrl.js"></script>
-                 <script src="/app/tempCtrl.js"></script>
-         <script src="/app/navCtrl.js"></script>
-        <script src="/app/peopleService.js"></script>
-        <script src="/app/md5.js"></script>
-        <script src="/app/gravatar.js"></script>
-    </body>
+    <script src="/public/vendor/jquery/jquery.js"></script>
+    <script src="/public/vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/public/vendor/angular/angular.js"></script>
+    <script src="/public/vendor/angular-route/angular-route.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/route.js"></script>
+    <script src="/app/listCtrl.js"></script>
+    <script src="/app/editCtrl.js"></script>
+    <script src="/app/navCtrl.js"></script>
+    <script src="/app/peopleService.js"></script>
+    <script src="/app/md5.js"></script>
+    <script src="/app/gravatar.js"></script>
+</body>
 </html>
