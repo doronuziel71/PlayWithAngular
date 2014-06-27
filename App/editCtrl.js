@@ -1,6 +1,7 @@
 (function () {
-    function editCtrl($scope,$routeParams,peopleService) {
+    function editCtrl($scope,$routeParams,peopleService,gravatar) {
         $scope.editedPerson = { name: "New Person" };
+        $scope.gravatar = gravatar;
         $scope.save=function(){
             console.log($scope.editedPerson);
             console.log($scope.frmEditPerson);
@@ -17,7 +18,7 @@
 
     var module = angular.module('doron');
 
-    module.controller('editCtrl', ['$scope','$routeParams', 'peopleService',editCtrl])
+    module.controller('editCtrl', ['$scope','$routeParams', 'peopleService','gravatar',editCtrl])
 
 
 })();

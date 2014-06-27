@@ -15,7 +15,7 @@
             });
             if (persons.length > 0)
                 person=  persons[0];
-            return $q.when(undefined);
+            return $q.when(person);
         }
 
         var list = function () {
@@ -33,14 +33,16 @@
         }
 
         var save = function (person) {
-            var current = get(person.email);
-            if (!current) {
-                people.push(person);
-            }
-            else {
-                angular.extend(current, person);
-            }
-            persist();
+            get(person.email).then(function (current) {
+                if (!current) {
+                    people.push(person);
+                }
+                else {
+                    angular.extend(current, person);
+                }
+                persist();
+            })
+         
         }
 
         var init = function () {

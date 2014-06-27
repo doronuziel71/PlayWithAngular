@@ -1,6 +1,16 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10">
         <h1 ng-bind="editedPerson.name"> </h1>
+
+    </div>
+    <div class="col-md-2" ng-if="editedPerson.email">
+        <img ng-src="{{gravatar(editedPerson.email,100)}}" alt="Alternate Text" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+       
         <div ng-form="frmEditPerson">
             <div class="form-group">
                 <label for="name">

@@ -16,7 +16,7 @@
               <td>{{item.phone}}</td>
               <td><img ng-src="{{gravatar(item.email,80)}}" alt="{{item.name}}"/></td>
               <td>
-                       <button class="btn btn-info" ng-click="edit(item)"><i class="glyphicon glyphicon-edit"></i></button>
+                       <a class="btn btn-info" ng-href="#/edit/{{item.email}}"><i class="glyphicon glyphicon-edit"></i></a>
                         <button class="btn btn-warning" ng-click="remove(item)"><i class="glyphicon glyphicon-remove"></i></button>
               </td>
             </tr>
