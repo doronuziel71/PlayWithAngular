@@ -13,7 +13,7 @@
            }
        },
        {
-           path: '/temp',
+           path: '/edit/:email?',
            route: {
                controller: 'editCtrl',
                templateUrl: '/edit.html',

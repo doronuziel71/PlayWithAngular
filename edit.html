@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1 ng-bind="editedPerson.name"> </h1>
+        <div ng-form="frmEditPerson">
+            <div class="form-group">
+                <label for="name">
+                    Name:
+                </label>
+                <input type="text" class="form-control" ng-model="editedPerson.name" name="name" id="name" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">
+                Email:
+            </label>
+            <input type="email" class="form-control" ng-model="editedPerson.email" name="email" id="email" />
+        </div>
+        <div class="form-group">
+            <label for="phone">
+                Phone:
+            </label>
+            <input type="text" class="form-control" ng-model="editedPerson.phone" name="phone" id="phone" />
+        </div>
+        <div class="buttons">
+            <button class="btn btn-default pull-right" ng-disabled="!frmEditPerson.$valid" ng-click="save()"><i class="glyphicon glyphicon-floppy-disk"></i>Save </button>
+        </div>
+    </div>
+    
+</div>

@@ -8,12 +8,14 @@
         }
 
         var get = function (email) {
-            var person = people.filter(function (x) {
+
+            var person;
+            var persons = people.filter(function (x) {
                 return email === x.email;
             });
-            if (person.length > 0)
-                return person[0];
-            return undefined;
+            if (persons.length > 0)
+                person=  persons[0];
+            return $q.when(undefined);
         }
 
         var list = function () {
