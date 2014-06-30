@@ -4,7 +4,7 @@
         var people = [];
 
         var persist = function () {
-            localStorage.setItem('people', JSON.stringify(people));
+            localStorage.setItem('people', JSON.stringify(angular.copy( people)));
         }
 
         var get = function (email) {
@@ -33,9 +33,9 @@
         }
 
         var save = function (person) {
-            get(person.email).then(function (current) {
+          return  get(person.email).then(function (current) {
                 if (!current) {
-                    people.push(person);
+                    people.push(angular.copy(person));
                 }
                 else {
                     angular.extend(current, person);

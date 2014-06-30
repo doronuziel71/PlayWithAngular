@@ -21,14 +21,6 @@
               </td>
             </tr>
           </tbody>
-          <tfoot>
-            <tr ng-form="editedPersonFom">
-              <td><input type="text" name="name" placeholder="enter name" ng-model="editedPerson.name"/></td>
-              <td><input type="email" name="email" placeholder="email address" ng-model="editedPerson.email"/></td>
-              <td><input type="text" name="phone" placeholder="phone" ng-model="editedPerson.phone"/></td>
-              <td><img ng-if="editedPersonForm.email && !editedPersonForm.email.$error.email" ng-src="{{gravatar(editedPerson.email)}}"/></td>
-              <td><button class="btn btn-primary" ng-click="add(editedPerson,80)">Add</button></td>
-            </tr>
-          </tfoot>
+         
         </table>
       </div>

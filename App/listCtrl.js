@@ -1,13 +1,20 @@
 (function () {
     var module = angular.module('doron');
 
-    var listCtrl = function ($scope, md5, peopleService, gravatar) {
+    var listCtrl = function ($scope, md5, peopleService, gravatar, confirm) {
 
 
         $scope.gravatar = gravatar || angular.noop;
-         peopleService.list().then(function(p){$scope.people=p;});
+        peopleService.list().then(function (p) {
+            $scope.people = p;
+        });
 
-        $scope.remove = peopleService.remove;
+         $scope.remove = function(person){
+             confirm('Are You Sure').then(function () {
+                 peopleService.remove(person);
+             }, function () { });
+             
+         }
 
         $scope.add = function (person) {
             peopleService.save(person);
